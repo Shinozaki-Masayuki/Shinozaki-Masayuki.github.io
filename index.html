@@ -304,6 +304,26 @@
   }
   .sec-desc{max-width:360px; color:var(--sub); font-size:14px; line-height:1.85;}
 
+  /* ---------- instagram feed (hero) ---------- */
+  .hero-ig-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+    max-width:440px; margin-top:44px;
+  }
+  .hero-ig-follow{margin-top:20px;}
+  .ig-card{
+    position:relative; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:12px;
+    background:var(--panel-2); border:1px solid var(--line);
+  }
+  .ig-card img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+  .ig-card:hover img{transform:scale(1.06);}
+  .ig-card-overlay{
+    position:absolute; inset:0; display:flex; align-items:flex-end; padding:10px;
+    background:linear-gradient(to top, rgba(8,8,10,0.85), rgba(8,8,10,0) 60%);
+    opacity:0; transition:opacity .3s ease;
+  }
+  .ig-card:hover .ig-card-overlay{opacity:1;}
+  .ig-card-caption{color:var(--white); font-size:11px; line-height:1.4;}
+
   /* ---------- studio intro ---------- */
   .studio-intro{max-width:620px;}
   .studio-intro-text{font-size:14.5px; line-height:2; color:var(--sub); max-width:460px;}
@@ -790,6 +810,7 @@
     .info-panels{grid-template-columns:repeat(2,1fr);}
     .genre-note-panel{grid-template-columns:1fr;}
     .achievement-grid{grid-template-columns:repeat(2,1fr);}
+    .hero-ig-grid{max-width:380px; gap:10px;}
     .dual-panel{grid-template-columns:1fr;}
     .results-grid{grid-template-columns:1fr 1fr;}
     .results-grid > .result-card:last-child{grid-column:span 2;}
@@ -817,7 +838,7 @@
     .achievement-grid{grid-template-columns:1fr;}
     .results-grid{grid-template-columns:1fr;}
     .results-grid > .result-card:last-child{grid-column:auto;}
-    .hero-ctas{flex-direction:column; align-items:flex-start;}
+    .hero-ig-grid{max-width:100%; gap:8px;}
     .nav{padding:16px 20px;}
   }
 
@@ -917,9 +938,13 @@
       <p class="hero-sub">
         BTS・SEVENTEEN・Stray Kids・TWICEなど、国内外トップアーティストのツアーダンサーとして活動する<strong>SEUN</strong>が代表を務める新宿のK-POPダンススタジオ。
       </p>
-      <div class="hero-ctas">
-        <a href="#classes" class="btn-primary">料金・クラスを見る</a>
+      <div class="hero-ig-grid" id="ig-grid">
+        <!-- data/instagram-posts.json からJSで自動生成されます（最新3件） -->
       </div>
+      <a href="https://www.instagram.com/nalstudio_tokyo" target="_blank" rel="noopener" class="btn-social hero-ig-follow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram @nalstudio_tokyo
+      </a>
     </div>
 
     <div class="marquee-wrap">
@@ -1601,6 +1626,21 @@
   window.addEventListener('resize', function(){
     if (window.innerWidth > 860) navToggle.checked = false;
   });
+
+  fetch('data/instagram-posts.json')
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      var grid = document.getElementById('ig-grid');
+      if (!grid || !data.posts) return;
+      grid.innerHTML = data.posts.slice(0, 3).map(function(post){
+        var caption = (post.caption || '').replace(/"/g, '&quot;');
+        return '<a class="ig-card" href="' + post.permalink + '" target="_blank" rel="noopener">' +
+          '<img src="' + post.image + '" alt="' + (caption || 'Instagram post') + '" loading="lazy">' +
+          '<span class="ig-card-overlay"><span class="ig-card-caption">' + caption + '</span></span>' +
+        '</a>';
+      }).join('');
+    })
+    .catch(function(err){ console.error('Instagram posts load failed:', err); });
 </script>
 
 </body>
