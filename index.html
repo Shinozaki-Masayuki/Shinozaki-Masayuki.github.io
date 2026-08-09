@@ -665,32 +665,29 @@
     background:var(--line); border-radius:20px; overflow:hidden; border:1px solid var(--line);
   }
   .result-card{
-    background:var(--black); padding:28px; display:flex; flex-direction:column; gap:4px;
+    background:var(--black); padding:14px 16px; display:flex; flex-direction:column; gap:2px;
     transition:transform .25s ease; min-width:0;
   }
   .result-card:hover{transform:translateY(-4px); background:#141417;}
-  .result-name{font-family:'Unbounded', sans-serif; font-weight:700; font-size:17px;}
-  .result-group{font-size:15px; color:var(--sub-dim);}
+  .result-name{font-family:'Unbounded', sans-serif; font-weight:700; font-size:14px;}
+  .result-group{font-size:12px; color:var(--sub-dim);}
 
-  /* ---------- instructor ---------- */
+  /* ---------- instructor (compact) ---------- */
   .instructor-grid{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:1px;
-    background:var(--line); border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(110px, 1fr)); gap:16px;
   }
   .instructor-card{
-    background:var(--black); display:flex; align-items:center; gap:18px;
-    padding:20px; transition:background .25s ease, transform .25s ease;
-    min-width:0;
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+    min-width:0; transition:transform .25s ease;
   }
-  .instructor-card:hover, .instructor-card:focus-visible{background:#141417; transform:translateY(-3px);}
+  .instructor-card:hover, .instructor-card:focus-visible{transform:translateY(-3px);}
   .instructor-photo{
-    width:64px; height:64px; border-radius:14px; overflow:hidden; flex-shrink:0;
-    border:1px solid var(--line);
+    width:100%; aspect-ratio:1/1; border-radius:14px; overflow:hidden; flex-shrink:0;
+    border:1px solid var(--line); background:var(--panel-2);
   }
-  .instructor-photo img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
-  .instructor-role{font-size:11.5px; color:var(--sub-dim); letter-spacing:0.1em; margin-bottom:4px;}
-  .instructor-name{font-family:'Unbounded', sans-serif; font-weight:700; font-size:16px; margin-bottom:6px;}
-  .instructor-arrow{font-size:11.5px; color:var(--holo-b);}
+  .instructor-photo img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block; transition:transform .35s ease;}
+  .instructor-card:hover .instructor-photo img{transform:scale(1.06);}
+  .instructor-name{font-family:'Unbounded', sans-serif; font-weight:700; font-size:13px; line-height:1.3;}
 
   /* ---------- access ---------- */
   .access-grid{
@@ -1404,35 +1401,77 @@
       </div>
 
       <div class="instructor-grid">
+        <a href="instructor_seun.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-seun-profile.jpg" alt="SEUN" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">SEUN</h3>
+        </a>
         <a href="instructor_hayataro.html" class="instructor-card">
           <div class="instructor-photo">
             <img src="images/instructor-hayataro.jpg" alt="HAYATARO" width="300" height="300" loading="lazy" decoding="async">
           </div>
-          <div class="instructor-info">
-            <div class="instructor-role mono">INSTRUCTOR</div>
-            <h3 class="instructor-name">HAYATARO</h3>
-            <div class="instructor-arrow">プロフィールを見る →</div>
-          </div>
+          <h3 class="instructor-name">HAYATARO</h3>
         </a>
         <a href="instructor_rina.html" class="instructor-card">
           <div class="instructor-photo">
             <img src="images/instructor-rina.jpg" alt="Rina" width="300" height="300" loading="lazy" decoding="async">
           </div>
-          <div class="instructor-info">
-            <div class="instructor-role mono">INSTRUCTOR</div>
-            <h3 class="instructor-name">Rina</h3>
-            <div class="instructor-arrow">プロフィールを見る →</div>
-          </div>
+          <h3 class="instructor-name">Rina</h3>
         </a>
         <a href="instructor_togashi.html" class="instructor-card">
           <div class="instructor-photo">
             <img src="images/instructor-togashi.jpg" alt="TOGASHI" width="300" height="300" loading="lazy" decoding="async">
           </div>
-          <div class="instructor-info">
-            <div class="instructor-role mono">INSTRUCTOR</div>
-            <h3 class="instructor-name">TOGASHI</h3>
-            <div class="instructor-arrow">プロフィールを見る →</div>
+          <h3 class="instructor-name">TOGASHI</h3>
+        </a>
+        <a href="instructor_nonoka.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-nonoka.jpg" alt="Nönöka" width="300" height="300" loading="lazy" decoding="async">
           </div>
+          <h3 class="instructor-name">Nönöka</h3>
+        </a>
+        <a href="instructor_remon.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-remon.jpg" alt="Remon" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">Remon</h3>
+        </a>
+        <a href="instructor_yuki.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-yuki.jpg" alt="YUKi" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">YUKi</h3>
+        </a>
+        <a href="instructor_konomi.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-konomi.jpg" alt="konomi" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">konomi</h3>
+        </a>
+        <a href="instructor_syoui.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-syoui.jpg" alt="syoui" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">syoui</h3>
+        </a>
+        <a href="instructor_yamakazu.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-yamakazu.jpg" alt="Yamakazu" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">Yamakazu</h3>
+        </a>
+        <a href="instructor_yuko.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-yuko.jpg" alt="yuko" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">yuko</h3>
+        </a>
+        <a href="instructor_happygirl.html" class="instructor-card">
+          <div class="instructor-photo">
+            <img src="images/instructor-happygirl.jpg" alt="はっぴーがーる" width="300" height="300" loading="lazy" decoding="async">
+          </div>
+          <h3 class="instructor-name">はっぴーがーる</h3>
         </a>
       </div>
     </div>
