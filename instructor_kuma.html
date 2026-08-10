@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUMA | INSTRUCTOR - NAL STUDIO TOKYO</title>
+<meta name="description" content="NAL STUDIO TOKYOインストラクター KUMAのプロフィール。THE BOYZ・2PM・PENTAGON YUTOなどのライブ出演やKCON JAPAN DANCE ALL DAY優勝など、幅広く活躍するダンサーが担当するクラスをご紹介。">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="KUMA | INSTRUCTOR - NAL STUDIO TOKYO">
+<meta property="og:description" content="NAL STUDIO TOKYOインストラクター KUMAのプロフィール。THE BOYZ・2PM・PENTAGON YUTOなどのライブ出演やKCON JAPAN DANCE ALL DAY優勝など、幅広く活躍するダンサーが担当するクラスをご紹介。">
+<meta property="og:site_name" content="NAL STUDIO TOKYO">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#08080a;
+    --panel:#121215;
+    --panel-2:#18181c;
+    --line:#26262b;
+    --white:#f2f1ee;
+    --sub:#8a8a92;
+    --sub-dim:#5c5c62;
+    --holo-a:#6ee7f5;
+    --holo-b:#b98eff;
+    --holo-c:#ff6fb0;
+    --holo-grad: linear-gradient(100deg, var(--holo-a) 0%, var(--holo-b) 45%, var(--holo-c) 85%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  body{
+    background:var(--black); color:var(--white);
+    font-family:'Noto Sans JP', sans-serif;
+    overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--holo-b); color:#08080a;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;}
+  .holo-text{
+    background:var(--holo-grad); -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  .grain{
+    position:fixed; inset:0; z-index:999; pointer-events:none; opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    background:rgba(8,8,10,0.72); backdrop-filter:blur(14px); border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto;}
+  .nav-logo{display:flex; align-items:center;}
+  .nav-logo-icon{height:34px; width:auto; display:block;}
+  .nav-links{display:flex; gap:36px; font-size:13px; letter-spacing:0.05em;}
+  .nav-links a{color:var(--sub); transition:color .25s ease; padding:6px 2px; position:relative;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--white);}
+  .nav-cta{
+    font-size:12px; padding:10px 20px; border:1px solid var(--white); border-radius:100px; letter-spacing:0.05em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .nav-cta:hover, .nav-cta:focus-visible{background:var(--white); color:var(--black);}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .nav-toggle-checkbox{display:none;}
+  .burger{display:none; flex-direction:column; justify-content:center; gap:5px; width:26px; height:26px; padding:0; cursor:pointer;}
+  .burger span{display:block; width:100%; height:2px; background:var(--white); transition:transform .25s ease, opacity .25s ease;}
+  .nav-mobile-panel{display:none; flex-direction:column; padding:8px 32px 20px; border-top:1px solid var(--line); background:rgba(8,8,10,0.98);}
+  .nav-mobile-panel a{color:var(--sub); font-size:14px; padding:14px 0; border-bottom:1px solid var(--line);}
+  .nav-mobile-panel a.nav-cta{border:1px solid var(--white); border-radius:100px; color:var(--white); text-align:center; margin-top:16px;}
+  .nav-mobile-panel a:hover, .nav-mobile-panel a:focus-visible{color:var(--white);}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-right > .nav-cta{display:none;}
+    .burger{display:flex;}
+    .nav-toggle-checkbox:checked ~ .nav-mobile-panel{display:flex;}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(2){opacity:0;}
+    .nav-toggle-checkbox:checked ~ .nav .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  }
+
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--sub);
+    letter-spacing:0.05em; margin-bottom:28px; transition:color .25s ease;
+  }
+  .back-link:hover, .back-link:focus-visible{color:var(--white);}
+
+  .profile-hero{
+    position:relative; padding:150px 0 90px; overflow:hidden;
+  }
+  .profile-hero-glow{
+    position:absolute; top:-15%; right:-10%; width:600px; height:600px; border-radius:50%;
+    background:radial-gradient(circle, rgba(185,142,255,0.16), transparent 65%); filter:blur(40px); pointer-events:none;
+  }
+  .profile-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start;
+  }
+  .profile-photo-wrap{
+    position:relative; border-radius:24px; overflow:hidden; border:1px solid var(--line);
+    aspect-ratio:1/1; background:var(--panel-2); max-width:400px;
+  }
+  .profile-photo-wrap img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
+  .profile-photo-wrap::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 60%, rgba(6,6,7,0.75) 100%);
+  }
+
+  .profile-role{
+    display:flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.2em; color:var(--sub); margin-bottom:22px;
+  }
+  .profile-role .dot{width:6px; height:6px; border-radius:50%; background:var(--holo-grad); box-shadow:0 0 12px var(--holo-b);}
+  .profile-name{
+    font-family:'Unbounded', sans-serif; font-weight:900; font-size:clamp(48px, 8vw, 96px); line-height:0.95; letter-spacing:-0.01em;
+  }
+  .profile-handle{margin-top:14px; font-size:13px; color:var(--sub);}
+  .profile-handle a{color:var(--holo-b); transition:color .2s ease;}
+  .profile-handle a:hover{color:var(--white);}
+
+  .career-box{margin-top:36px;}
+  .career-label{
+    display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:0.08em;
+    color:var(--sub); border:1px solid var(--line); padding:8px 16px; border-radius:100px; margin-bottom:22px;
+  }
+  .career-label .chip{width:7px; height:7px; border-radius:2px; background:var(--holo-grad);}
+  .career-list{
+    font-size:14.5px; line-height:2.1; color:var(--white); max-width:640px;
+  }
+
+  .contact{text-align:center; padding:140px 0;}
+  .contact h2{font-family:'Unbounded', sans-serif; font-weight:900; font-size:clamp(30px,5vw,56px); line-height:1.15; margin-bottom:24px;}
+  .contact p{color:var(--sub); font-size:15px; max-width:440px; margin:0 auto 40px;}
+  .btn-primary{
+    font-size:14px; letter-spacing:0.04em; padding:16px 30px; border-radius:100px;
+    background:var(--white); color:var(--black); font-weight:700; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{transform:translateY(-2px); box-shadow:0 12px 30px -8px rgba(185,142,255,0.5);}
+
+  footer{border-top:1px solid var(--line); padding:40px 0;}
+  .foot-bottom{display:flex; justify-content:space-between; color:var(--sub-dim); font-size:12px; flex-wrap:wrap; gap:10px; max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--holo-b); outline-offset:3px; border-radius:4px;}
+
+  @media (max-width:860px){
+    .profile-grid{grid-template-columns:1fr; align-items:start;}
+    .profile-photo-wrap{max-width:320px;}
+    .profile-hero{padding:120px 0 70px;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .nav{padding:16px 20px;}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+  <div class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="NAL STUDIO" class="nav-logo-icon" width="852" height="570">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="index.html#classes">PRICE</a>
+      <a href="index.html#instructor">INSTRUCTOR</a>
+      <a href="index.html#access">ACCESS</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
+      <label for="nav-toggle" class="burger" aria-label="メニューを開く"><span></span><span></span><span></span></label>
+    </div>
+  </div>
+  <nav class="nav-mobile-panel">
+    <a href="index.html">HOME</a>
+    <a href="index.html#classes">PRICE</a>
+    <a href="index.html#instructor">INSTRUCTOR</a>
+    <a href="index.html#access">ACCESS</a>
+    <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
+  </nav>
+</header>
+
+<main>
+  <section class="profile-hero">
+    <div class="profile-hero-glow"></div>
+    <div class="wrap">
+      <a href="index.html#instructor" class="back-link">← INSTRUCTORへ戻る</a>
+
+      <div class="profile-grid">
+        <div class="profile-photo-wrap">
+          <img src="images/instructor-kuma.jpg" alt="KUMA" width="410" height="580">
+        </div>
+
+        <div>
+          <div class="profile-role"><span class="dot"></span>INSTRUCTOR</div>
+          <h1 class="profile-name">KUMA</h1>
+          <div class="profile-handle mono">Instagram: <a href="https://www.instagram.com/ikumaaaaaaa" target="_blank" rel="noopener">@ikumaaaaaaa</a></div>
+
+          <div class="career-box">
+            <div class="career-label"><span class="chip"></span>経歴【LIVE・バックダンサー】</div>
+            <div class="career-list">
+              THE BOYZ「THE BOYZ 2ND WORLD TOUR : ZENERATION in Japan」出演<br>
+              PENTAGON YUTO / ONF U「THE KLOBAL STAGE」出演<br>
+              TANAKA「TANAKA CONCERT LIVE in JAPAN」出演<br>
+              KEITA「KEITA FIRST FANMEETING IN JAPAN [WELCOME TO MY ROOM]」東京・大阪公演出演<br>
+              n.SSign「n.SSign 1st ARENA CONCERT BIRTH OF COSMO」出演<br>
+              2PM「2PM Japan 15th Anniversary Concert “THE RETURN” in TOKYO DOME」出演<br>
+              2024 MAMA AWARDS Japan ダンサー：BOYNEXTDOOR / TOMORROW X TOGETHER / INI / BIGBANG / G-DRAGON<br>
+              佐原至恩「EVENT HORIZON vol.2」出演
+            </div>
+          </div>
+
+          <div class="career-box">
+            <div class="career-label"><span class="chip"></span>MV・映像出演</div>
+            <div class="career-list">
+              BREAK THROUGH「Super Magic」MV<br>
+              岡崎体育「ポーズ」特別MV<br>
+              Snow Man「GLITCH」MV
+            </div>
+          </div>
+
+          <div class="career-box">
+            <div class="career-label"><span class="chip"></span>TV・CM</div>
+            <div class="career-list">
+              CM「ロウムメイト（ロウムメイト誕生）篇」<br>
+              CM「株式会社 丸貞 50周年」
+            </div>
+          </div>
+
+          <div class="career-box">
+            <div class="career-label"><span class="chip"></span>ダンス・イベント</div>
+            <div class="career-list">
+              KCON JAPAN 2018 出演<br>
+              KCON JAPAN 2019 出演<br>
+              SEOUL EDITION 23 IN TOKYO 出演<br>
+              KCON JAPAN 2024 DANCE ALL DAY「STREET KCON FIGHTER」優勝<br>
+              KCON JAPAN 2025 DANCE CLUB BATTLE「DANCE STUDIO」出演
+            </div>
+          </div>
+
+          <div class="career-box">
+            <div class="career-label"><span class="chip"></span>その他</div>
+            <div class="career-list">
+              IMP.「Reckless Love」Stand-in<br>
+              IMP. LIVE TOUR 2026「MAGenter『Align』」Stand-in<br>
+              吉柳咲良「Pandora」Stand-in<br>
+              Liidance 発表会「LCON 2025」審査員<br>
+              YellowSparrow presents「K-POP dance Live 2025全国大会 in TOKYO」審査員
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2>KUMAのクラスを<br><span class="holo-text">体験</span>してみませんか？</h2>
+      <p>体験レッスンのご予約はWEB予約サイトより承っております。</p>
+      <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="btn-primary">WEBで予約する →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-bottom mono">
+    <span>© 2026 NAL STUDIO TOKYO</span>
+    <span>SHINJUKU, TOKYO, JAPAN</span>
+  </div>
+</footer>
+
+<script>
+  var navToggle = document.getElementById('nav-toggle');
+  document.querySelectorAll('.nav-mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ navToggle.checked = false; });
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 860) navToggle.checked = false;
+  });
+</script>
+
+</body>
+</html>
