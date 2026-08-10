@@ -123,15 +123,21 @@
   }
   .nav-cta:hover, .nav-cta:focus-visible{transform:translateY(-2px); box-shadow:0 0 22px -4px rgba(185,142,255,0.6);}
   .nav-right{display:flex; align-items:center; gap:18px;}
-  .nav-instagram{
+  .nav-instagram, .nav-line, .nav-youtube{
     display:flex; align-items:center; justify-content:center;
     width:34px; height:34px; border-radius:50%; flex-shrink:0;
-    background:var(--holo-grad);
     box-shadow:0 0 16px -6px rgba(185,142,255,0.6);
     transition:transform .25s ease, box-shadow .25s ease;
   }
-  .nav-instagram svg{width:18px; height:18px; display:block;}
-  .nav-instagram:hover, .nav-instagram:focus-visible{transform:translateY(-2px); box-shadow:0 0 22px -4px rgba(185,142,255,0.7);}
+  .nav-instagram{
+    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  }
+  .nav-line{background:#06c755;}
+  .nav-youtube{background:#ff0000;}
+  .nav-instagram svg, .nav-line svg, .nav-youtube svg{width:18px; height:18px; display:block;}
+  .nav-instagram:hover, .nav-instagram:focus-visible,
+  .nav-line:hover, .nav-line:focus-visible,
+  .nav-youtube:hover, .nav-youtube:focus-visible{transform:translateY(-2px); box-shadow:0 0 22px -4px rgba(185,142,255,0.7);}
   .nav-toggle-checkbox{display:none;}
   .burger{
     display:none; flex-direction:column; justify-content:center; gap:5px;
@@ -155,11 +161,18 @@
   .nav-mobile-panel a.nav-cta{
     display:block; text-align:center; margin-top:16px;
   }
-  .nav-mobile-panel a.nav-instagram-mobile{
+  .nav-mobile-panel a.nav-instagram-mobile,
+  .nav-mobile-panel a.nav-line-mobile,
+  .nav-mobile-panel a.nav-youtube-mobile{
     display:flex; align-items:center; gap:8px;
-    color:var(--holo-b); font-weight:700;
+    font-weight:700;
   }
-  .nav-mobile-panel a.nav-instagram-mobile svg{width:18px; height:18px; flex-shrink:0;}
+  .nav-mobile-panel a.nav-instagram-mobile{color:#d6249f;}
+  .nav-mobile-panel a.nav-line-mobile{color:#06c755;}
+  .nav-mobile-panel a.nav-youtube-mobile{color:#ff0000;}
+  .nav-mobile-panel a.nav-instagram-mobile svg,
+  .nav-mobile-panel a.nav-line-mobile svg,
+  .nav-mobile-panel a.nav-youtube-mobile svg{width:18px; height:18px; flex-shrink:0;}
   .nav-mobile-panel a:hover, .nav-mobile-panel a:focus-visible{color:var(--white);}
 
   /* ---------- hero ---------- */
@@ -877,6 +890,18 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+      <stop offset="0%" stop-color="#fdf497"/>
+      <stop offset="5%" stop-color="#fdf497"/>
+      <stop offset="45%" stop-color="#fd5949"/>
+      <stop offset="60%" stop-color="#d6249f"/>
+      <stop offset="90%" stop-color="#285aeb"/>
+    </radialGradient>
+  </defs>
+</svg>
+
 <div class="grain"></div>
 
 <header>
@@ -899,6 +924,17 @@
           <circle cx="17.2" cy="6.8" r="1.1" fill="white"/>
         </svg>
       </a>
+      <a href="https://line.me/R/ti/p/@nalstudio_tokyo" target="_blank" rel="noopener" class="nav-line" aria-label="公式LINEを追加">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5c0 4.7-4.5 8.5-9.5 8.5-1 0-2-.1-2.9-.4L4 21l1.1-3.8C3.8 15.8 3 13.7 3 11.5 3 6.8 7.5 3 12.5 3S21 6.8 21 11.5z"/>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@nalstudio_tokyo" target="_blank" rel="noopener" class="nav-youtube" aria-label="YouTubeを見る">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="4"/>
+          <path d="M10.5 9.5l5 2.5-5 2.5z" fill="white" stroke="none"/>
+        </svg>
+      </a>
       <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
       <label for="nav-toggle" class="burger" aria-label="メニューを開く"><span></span><span></span><span></span></label>
     </div>
@@ -918,6 +954,19 @@
       </svg>
       Instagram
     </a>
+    <a href="https://line.me/R/ti/p/@nalstudio_tokyo" target="_blank" rel="noopener" class="nav-line-mobile">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5c0 4.7-4.5 8.5-9.5 8.5-1 0-2-.1-2.9-.4L4 21l1.1-3.8C3.8 15.8 3 13.7 3 11.5 3 6.8 7.5 3 12.5 3S21 6.8 21 11.5z"/>
+      </svg>
+      LINE
+    </a>
+    <a href="https://www.youtube.com/@nalstudio_tokyo" target="_blank" rel="noopener" class="nav-youtube-mobile">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="4"/>
+        <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/>
+      </svg>
+      YouTube
+    </a>
     <a href="https://nalstudio.stores.jp/reserve/nalstudio/booking_pages" target="_blank" rel="noopener" class="nav-cta">WEBで予約する</a>
   </nav>
 </header>
@@ -936,7 +985,7 @@
         <!-- data/instagram-posts.json からJSで自動生成されます（最新3件） -->
       </div>
       <a href="https://www.instagram.com/nalstudio_tokyo" target="_blank" rel="noopener" class="btn-social hero-ig-follow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="url(#ig-grad)" stroke="none"/></svg>
         Instagram @nalstudio_tokyo
       </a>
     </div>
@@ -1364,31 +1413,6 @@
     </div>
   </section>
 
-  <!-- ============ TRAINEE RESULTS ============ -->
-  <section class="results" id="results">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <div class="sec-num mono">TRACK RECORD</div>
-          <h2 class="sec-title">指導実績</h2>
-        </div>
-        <div class="sec-desc">SEUNによる指導を受け、現在メディアで活躍しているアーティストの皆さんです。確かな指導実績の一部をご紹介します。</div>
-      </div>
-
-      <div class="results-grid">
-        <div class="result-card"><div class="result-name">SO GEON</div><div class="result-group mono">NEXZ</div></div>
-        <div class="result-card"><div class="result-name">AMARU</div><div class="result-group mono">KickFlip</div></div>
-        <div class="result-card"><div class="result-name">Kotone</div><div class="result-group mono">tripleS</div></div>
-        <div class="result-card"><div class="result-name">REO</div><div class="result-group mono">aoen</div></div>
-        <div class="result-card"><div class="result-name">Hikaru</div><div class="result-group mono">FANTASY BOYS</div></div>
-        <div class="result-card"><div class="result-name">Hyo</div><div class="result-group mono">YUHZ</div></div>
-        <div class="result-card"><div class="result-name">ISSA</div><div class="result-group mono">KO1KEYZ</div></div>
-        <div class="result-card"><div class="result-name">鈴木志音</div><div class="result-group mono">THE SUPER FRUIT</div></div>
-        <div class="result-card"><div class="result-name">TAICHI</div><div class="result-group mono">BMSG TRAINEE</div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ INSTRUCTOR ============ -->
   <section class="results" id="instructor">
     <div class="wrap">
@@ -1473,6 +1497,31 @@
           </div>
           <h3 class="instructor-name">はっぴーがーる</h3>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAINEE RESULTS ============ -->
+  <section class="results" id="results">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-num mono">TRACK RECORD</div>
+          <h2 class="sec-title">指導実績</h2>
+        </div>
+        <div class="sec-desc">SEUNによる指導を受け、現在メディアで活躍しているアーティストの皆さんです。確かな指導実績の一部をご紹介します。</div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card"><div class="result-name">SO GEON</div><div class="result-group mono">NEXZ</div></div>
+        <div class="result-card"><div class="result-name">AMARU</div><div class="result-group mono">KickFlip</div></div>
+        <div class="result-card"><div class="result-name">Kotone</div><div class="result-group mono">tripleS</div></div>
+        <div class="result-card"><div class="result-name">REO</div><div class="result-group mono">aoen</div></div>
+        <div class="result-card"><div class="result-name">Hikaru</div><div class="result-group mono">FANTASY BOYS</div></div>
+        <div class="result-card"><div class="result-name">Hyo</div><div class="result-group mono">YUHZ</div></div>
+        <div class="result-card"><div class="result-name">ISSA</div><div class="result-group mono">KO1KEYZ</div></div>
+        <div class="result-card"><div class="result-name">鈴木志音</div><div class="result-group mono">THE SUPER FRUIT</div></div>
+        <div class="result-card"><div class="result-name">TAICHI</div><div class="result-group mono">BMSG TRAINEE</div></div>
       </div>
     </div>
   </section>
@@ -1597,7 +1646,7 @@
       <div class="sendai-footer">
         <p class="sendai-footer-note">夢を持つ人の「挑戦できる場所」を創っていきます。</p>
         <a href="https://www.instagram.com/nalstudio_sendai/" target="_blank" rel="noopener" class="btn-social">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="url(#ig-grad)" stroke="none"/></svg>
           instagram@nalstudio_sendai
         </a>
       </div>
@@ -1615,11 +1664,11 @@
       </div>
       <div class="contact-social">
         <a href="https://www.instagram.com/nalstudio_tokyo" target="_blank" rel="noopener" class="btn-social">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="url(#ig-grad)" stroke="none"/></svg>
           Instagram @nalstudio_tokyo
         </a>
         <a href="https://line.me/R/ti/p/@nalstudio_tokyo" target="_blank" rel="noopener" class="btn-social">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M21 11.5c0 4.7-4.5 8.5-9.5 8.5-1 0-2-.1-2.9-.4L4 21l1.1-3.8C3.8 15.8 3 13.7 3 11.5 3 6.8 7.5 3 12.5 3S21 6.8 21 11.5z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06c755" stroke-width="1.6" stroke-linejoin="round"><path d="M21 11.5c0 4.7-4.5 8.5-9.5 8.5-1 0-2-.1-2.9-.4L4 21l1.1-3.8C3.8 15.8 3 13.7 3 11.5 3 6.8 7.5 3 12.5 3S21 6.8 21 11.5z"/></svg>
           公式LINEを追加
         </a>
       </div>
